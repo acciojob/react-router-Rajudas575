@@ -1,25 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import Navigation from "./Navigation";
 import './../styles/App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import About from "./About";
+import Home from "./Home";
 
 const App = () => {
-  return (
+  return ( 
+    <BrowserRouter>
     <div>
-        {/* Do not remove the main div */}
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
     </div>
-  <Router>
-    
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-    
-    </Router>
+    <Routes>
+      <Route path="/about" element={<About />}/>
+      <Route path="/" element={<Home />}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App

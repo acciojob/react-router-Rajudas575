@@ -11,13 +11,13 @@ const App = () => {
         {/* Do not remove the main div */}
     </div>
   <Router>
-      <div>
+    
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      </div>
+    
     </Router>
   )
 }
